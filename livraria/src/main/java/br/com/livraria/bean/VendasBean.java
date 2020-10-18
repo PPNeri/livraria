@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.bean;
+package br.com.livraria.bean;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,7 +11,7 @@ import javax.persistence.PersistenceContext;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
 
-import br.com.caelum.livraria.modelo.Venda;
+import br.com.livraria.modelo.Venda;
 
 @Named
 @ViewScoped

@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.bean;
+package br.com.livraria.bean;
 
 import java.io.Serializable;
 
@@ -8,8 +8,8 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.caelum.livraria.dao.UsuarioDao;
-import br.com.caelum.livraria.modelo.Usuario;
+import br.com.livraria.dao.UsuarioDao;
+import br.com.livraria.modelo.Usuario;
 
 @Named
 @ViewScoped

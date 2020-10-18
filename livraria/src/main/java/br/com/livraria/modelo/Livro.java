@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.modelo;
+package br.com.livraria.modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class Livro implements Serializable {
 	private Calendar dataLancamento = Calendar.getInstance();
 
 	@ManyToMany
-	private List<Autor> autores = new ArrayList<Autor>();
+	private List<Autor> autores = new ArrayList<>();
 
 	public List<Autor> getAutores() {
 		return autores;

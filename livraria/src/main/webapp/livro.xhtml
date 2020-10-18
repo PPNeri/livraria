@@ -29,7 +29,7 @@
 
 					<p:outputLabel value="Titulo:" for="titulo" />
 					<p:inputText id="titulo" value="#{livroBean.livro.titulo}"
-						required="true" requiredMessage="Título obrigatório"
+						required="true" requiredMessage="Deve conter um Título"
 						validatorMessage="Título não pode ser superior a 40">
 						<f:validateLength maximum="40" />
 						<f:ajax event="blur" render="messages" />

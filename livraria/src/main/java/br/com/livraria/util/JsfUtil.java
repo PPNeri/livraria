@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.util;
+package br.com.livraria.util;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;

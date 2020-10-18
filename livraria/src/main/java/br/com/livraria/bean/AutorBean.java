@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.bean;
+package br.com.livraria.bean;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,8 +8,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
-import br.com.caelum.livraria.dao.AutorDao;
-import br.com.caelum.livraria.modelo.Autor;
+import br.com.livraria.dao.AutorDao;
+import br.com.livraria.modelo.Autor;
 
 @SuppressWarnings("serial")
 @Named // CDI

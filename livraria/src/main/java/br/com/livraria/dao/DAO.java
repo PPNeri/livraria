@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.dao;
+package br.com.livraria.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -23,10 +23,12 @@ public class DAO<T> implements Serializable {
 	}
 
 	public void remove(T t) {
+		// remove o objeto
 		em.remove(em.merge(t));
 	}
 
 	public void atualiza(T t) {
+		// Atualiza o Objeto
 		em.merge(t);
 	}
 
@@ -45,8 +47,7 @@ public class DAO<T> implements Serializable {
 	}
 
 	public int contaTodos() {
-		long result = (Long) em.createQuery("select count(n) from livro n")
-				.getSingleResult();
+		long result = (Long) em.createQuery("select count(n) from livro n").getSingleResult();
 
 		return (int) result;
 	}
@@ -55,8 +56,7 @@ public class DAO<T> implements Serializable {
 		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
 		query.select(query.from(classe));
 
-		List<T> lista = em.createQuery(query).setFirstResult(firstResult)
-				.setMaxResults(maxResults).getResultList();
+		List<T> lista = em.createQuery(query).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
 
 		return lista;
 	}

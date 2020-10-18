@@ -1,7 +1,8 @@
-package br.com.caelum.livraria.bean;
+package br.com.livraria.bean;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -12,10 +13,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
-import br.com.caelum.livraria.dao.AutorDao;
-import br.com.caelum.livraria.dao.LivroDao;
-import br.com.caelum.livraria.modelo.Autor;
-import br.com.caelum.livraria.modelo.Livro;
+import br.com.livraria.dao.AutorDao;
+import br.com.livraria.dao.LivroDao;
+import br.com.livraria.modelo.Autor;
+import br.com.livraria.modelo.Livro;
 
 @Named
 @ViewScoped
@@ -78,13 +79,13 @@ public class LivroBean implements Serializable {
 	// begin
 	@Transactional
 	public void gravar() {
-		System.out.println("Gravando livro " + this.livro.getTitulo());
 
 		if (livro.getAutores().isEmpty()) {
-			context.addMessage("autor", new FacesMessage(
-					"Livro deve ter pelo menos um Autor."));
+			context.addMessage("autor", new FacesMessage("Livro deve ter pelo menos um Autor."));
 			return;
 		}
+
+		System.out.println("Gravando livro " + this.livro.getTitulo());
 
 		if (this.livro.getId() == null) {
 			livroDao.adiciona(this.livro);
@@ -119,13 +120,11 @@ public class LivroBean implements Serializable {
 		return "autor?faces-redirect=true";
 	}
 
-	public void comecaComDigitoUm(FacesContext fc, UIComponent component,
-			Object value) throws ValidatorException {
+	public void comecaComDigitoUm(FacesContext fc, UIComponent component, Object value) throws ValidatorException {
 
 		String valor = value.toString();
 		if (!valor.startsWith("1")) {
-			throw new ValidatorException(new FacesMessage(
-					"ISBN deveria começar com 1"));
+			throw new ValidatorException(new FacesMessage("ISBN deveria começar com 1"));
 		}
 
 	}

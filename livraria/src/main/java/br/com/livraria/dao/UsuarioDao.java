@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.dao;
+package br.com.livraria.dao;
 
 import java.io.Serializable;
 
@@ -8,7 +8,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import br.com.caelum.livraria.modelo.Usuario;
+import br.com.livraria.modelo.Usuario;
 
 @Stateless
 @SuppressWarnings("serial")

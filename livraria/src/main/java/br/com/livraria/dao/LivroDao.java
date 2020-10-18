@@ -1,4 +1,4 @@
-package br.com.caelum.livraria.dao;
+package br.com.livraria.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.com.caelum.livraria.modelo.Livro;
+import br.com.livraria.modelo.Livro;
 
 @Stateless
 @SuppressWarnings("serial")
@@ -21,6 +21,7 @@ public class LivroDao implements Serializable {
 
 	@PostConstruct
 	void init() {
+		System.out.println("post Costruct LivroDAO");
 		this.dao = new DAO<Livro>(this.manager, Livro.class);
 	}
 
